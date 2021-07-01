@@ -74,22 +74,12 @@
     <article id="post-我的第一篇博客" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/rdleng_blog/2021/07/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="article-date">
-  <time class="dt-published" datetime="2021-06-30T23:40:59.000Z" itemprop="datePublished">2021-07-01</time>
+  <time class="dt-published" datetime="2021-06-30T23:40:59.913Z" itemprop="datePublished">2021-07-01</time>
 </a>
     
   </div>
   <div class="article-inner">
     
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/rdleng_blog/2021/07/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">我的第一篇博客</a>
-    </h1>
-  
-
-      </header>
     
     <div class="e-content article-entry" itemprop="articleBody">
       
@@ -131,11 +121,52 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">&quot;文章标题&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>使用 Typora 编辑文件。</p>
+<p>清除博客缓存</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+
+<p>生成静态页面</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+
+<p>码云新建私有仓库，名称为 rdleng_blog</p>
+<p>安装 git 插件，博客根路径下输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+
+<p>设置远程仓库</p>
+<p>打开 <code>._config.yml</code></p>
+<p>修改</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="string">http://gitee.com/rdleng0</span></span><br><span class="line"><span class="string">root:/rdleng_blog/</span></span><br></pre></td></tr></table></figure>
+
+<p>设置仓库地址</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://gitee.com/rdleng0/rdleng_blog</span>   </span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<p>部署到远端</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p>如果报错</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">remote: Access denied</span><br><span class="line">fatal: unable to access &#x27;https://gitee.com/rdleng0/rdleng_blog/&#x27;: The requested URL returned error: 403</span><br></pre></td></tr></table></figure>
+
+<p>清空本地账号的缓存，win+r -&gt; control -&gt; 用户账户 -&gt; 凭证管理器</p>
+<p>码云开启静态页面服务</p>
+<p><img src="https://gitee.com/rdleng0/typora-img/raw/master//img/20210701081954.png" alt="image-20210701081951758"></p>
+<p>直接启动即可。</p>
+<p>每次 <code>hexo d</code> 之后要更新。</p>
+<p>博客流程</p>
+<ol>
+<li><p>写博客</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;文章名&quot; 使用 Typora 编辑文件</span><br></pre></td></tr></table></figure></li>
+<li><p>清缓存 &amp; 更新渲染</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean 清缓存</span><br><span class="line">hexo g 重新渲染</span><br></pre></td></tr></table></figure></li>
+<li><p>推送到码云</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure></li>
+<li><p>更新码云的静态页面</p>
+</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_46036214/article/details/110137239">在 gitee 搭建属于自己的博客</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://gitee.com/rdleng0/2021/07/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" data-id="ckqk5hh5x0000now7eqi76cay" data-title="我的第一篇博客" class="article-share-link">Share</a>
+      <a data-url="https://gitee.com/rdleng0/2021/07/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" data-id="ckqk6bgec0000ekw73mke6fa6" data-title="" class="article-share-link">Share</a>
       
       
       
@@ -186,7 +217,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://gitee.com/rdleng0/2021/07/01/hello-world/" data-id="ckqk5hh6d0001now7fd9j5epq" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="https://gitee.com/rdleng0/2021/07/01/hello-world/" data-id="ckqk6bgew0001ekw7bs5b7xhe" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
@@ -229,7 +260,7 @@
       <ul>
         
           <li>
-            <a href="/rdleng_blog/2021/07/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">我的第一篇博客</a>
+            <a href="/rdleng_blog/2021/07/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">(no title)</a>
           </li>
         
           <li>
