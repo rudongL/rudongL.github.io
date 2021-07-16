@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>IDEA 配置终端为 cmder</title>
+    <link href="/2021/07/16/IDEA-%E9%85%8D%E7%BD%AE%E7%BB%88%E7%AB%AF%E4%B8%BA-cmder/"/>
+    <url>/2021/07/16/IDEA-%E9%85%8D%E7%BD%AE%E7%BB%88%E7%AB%AF%E4%B8%BA-cmder/</url>
+    
+    <content type="html"><![CDATA[<p>widows 自带 cmd 命令行太丑，而且不能使用 linux 命令。因此使用 cmder 作为 IDEA 内的终端。</p><ol><li><h6 id="IDEA-安装-Terminal-插件"><a href="#IDEA-安装-Terminal-插件" class="headerlink" title="IDEA 安装 Terminal 插件"></a>IDEA 安装 Terminal 插件</h6><figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xl"><span class="hljs-function"><span class="hljs-title">file</span> -&gt;</span> <span class="hljs-function"><span class="hljs-title">settings</span> -&gt;</span> <span class="hljs-function"><span class="hljs-title">plugins</span> -&gt;</span> terminal<br></code></pre></td></tr></table></figure><img src="https://gitee.com/rdleng0/typora-img/raw/master//img/20210716231019.png" alt="image-20210716231017583" style="zoom:80%;" /></li><li><h6 id="配置-cmder-环境变量"><a href="#配置-cmder-环境变量" class="headerlink" title="配置 cmder 环境变量"></a>配置 cmder 环境变量</h6><p>添加系统变量，变量名 <code>CMDER_ROOT</code>，变量值为 cmder 安装路径。</p><img src="https://gitee.com/rdleng0/typora-img/raw/master//img/20210716231243.png" alt="image-20210716231237355" style="zoom:80%;" /></li><li><h6 id="file-gt-settings-gt-Tools-gt-Terminal-中的-Shell-Path-中添加"><a href="#file-gt-settings-gt-Tools-gt-Terminal-中的-Shell-Path-中添加" class="headerlink" title="file -&gt; settings -&gt; Tools -&gt; Terminal 中的 Shell Path 中添加"></a>file -&gt; settings -&gt; Tools -&gt; Terminal 中的 Shell Path 中添加</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-string">&quot;cmd.exe&quot;</span> /k <span class="hljs-string">&quot;&quot;</span>%CMDER_ROOT%\vendor\init.bat<span class="hljs-string">&quot;&quot;</span><br></code></pre></td></tr></table></figure><img src="https://gitee.com/rdleng0/typora-img/raw/master//img/20210716231454.png" alt="image-20210716231438163" style="zoom: 50%;" /></li><li><h6 id="重启-IDEA-并验证"><a href="#重启-IDEA-并验证" class="headerlink" title="重启 IDEA 并验证"></a>重启 IDEA 并验证</h6></li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>工具</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>RSSHub + FreshRSS + FluentReader 实现 RSS 订阅</title>
     <link href="/2021/07/03/RSSHub-FreshRSS-FluentReader-%E5%AE%9E%E7%8E%B0-RSS-%E8%AE%A2%E9%98%85/"/>
     <url>/2021/07/03/RSSHub-FreshRSS-FluentReader-%E5%AE%9E%E7%8E%B0-RSS-%E8%AE%A2%E9%98%85/</url>
