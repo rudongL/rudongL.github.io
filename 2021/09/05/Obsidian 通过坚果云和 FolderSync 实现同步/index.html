@@ -18,7 +18,7 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-  <title>IDEA 配置终端为 cmder - Hexo</title>
+  <title>Hexo</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -163,7 +163,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="IDEA 配置终端为 cmder">
+            <span class="h2" id="subtitle" title="">
               
             </span>
 
@@ -173,8 +173,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-07-16 23:05" pubdate>
-        July 16, 2021 pm
+      <time datetime="2021-09-05 09:42" pubdate>
+        September 5, 2021 am
       </time>
     </span>
   
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      103 字
+      334 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      3
        分钟
     </span>
   
@@ -233,20 +233,48 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">IDEA 配置终端为 cmder</h1>
+            <h1 style="display: none"></h1>
             
             <div class="markdown-body">
-              <p>widows 自带 cmd 命令行太丑，而且不能使用 linux 命令。因此使用 cmder 作为 IDEA 内的终端。</p>
+              <hr>
+<p>title:Obsidian 通过坚果云和 FolderSync 实现同步<br>tag:工具</p>
+<hr>
+<h1 id="Obsidian-通过坚果云和-FolderSync-实现同步"><a href="#Obsidian-通过坚果云和-FolderSync-实现同步" class="headerlink" title="Obsidian 通过坚果云和 FolderSync 实现同步"></a>Obsidian 通过坚果云和 FolderSync 实现同步</h1><p>Obsidian 自带同步服务每月需要 4 刀，通过坚果云和第三方同步软件 FolderSync 可实现 Windows 和 Android 的双向同步。坚果云免费账号每月上传流量 1GB，下载流量 3GB，用来同步笔记的话暂时够用。</p>
+<p>一、坚果云 Windows 端</p>
+<ol start="0">
+<li><p>下载坚果云 PC 端（略）</p>
+</li>
+<li><p>注册登录（略） </p>
+</li>
+<li><p>坚果云 PC 端设置同步文件夹</p>
+<p>  在任意盘符下新建一个同步文件夹或将一个文件夹右键通过坚果云同步。这里以 <code>F://obsidian</code> 文件夹为例。</p>
+</li>
+</ol>
+<p>二、坚果云 Android 端</p>
 <ol>
-<li><h6 id="IDEA-安装-Terminal-插件"><a href="#IDEA-安装-Terminal-插件" class="headerlink" title="IDEA 安装 Terminal 插件"></a>IDEA 安装 Terminal 插件</h6><figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xl"><span class="hljs-function"><span class="hljs-title">file</span> -&gt;</span> <span class="hljs-function"><span class="hljs-title">settings</span> -&gt;</span> <span class="hljs-function"><span class="hljs-title">plugins</span> -&gt;</span> terminal<br></code></pre></td></tr></table></figure>
-
-<img src="https://gitee.com/rdleng0/typora-img/raw/master//img/20210716231019.png" srcset="/img/loading.gif" lazyload alt="image-20210716231017583" style="zoom:80%;" /></li>
-<li><h6 id="配置-cmder-环境变量"><a href="#配置-cmder-环境变量" class="headerlink" title="配置 cmder 环境变量"></a>配置 cmder 环境变量</h6><p>添加系统变量，变量名 <code>CMDER_ROOT</code>，变量值为 cmder 安装路径。</p>
-<img src="https://gitee.com/rdleng0/typora-img/raw/master//img/20210716231243.png" srcset="/img/loading.gif" lazyload alt="image-20210716231237355" style="zoom:80%;" /></li>
-<li><h6 id="file-gt-settings-gt-Tools-gt-Terminal-中的-Shell-Path-中添加"><a href="#file-gt-settings-gt-Tools-gt-Terminal-中的-Shell-Path-中添加" class="headerlink" title="file -&gt; settings -&gt; Tools -&gt; Terminal 中的 Shell Path 中添加"></a>file -&gt; settings -&gt; Tools -&gt; Terminal 中的 Shell Path 中添加</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-string">&quot;cmd.exe&quot;</span> /k <span class="hljs-string">&quot;&quot;</span>%CMDER_ROOT%\vendor\init.bat<span class="hljs-string">&quot;&quot;</span><br></code></pre></td></tr></table></figure>
-
-<img src="https://gitee.com/rdleng0/typora-img/raw/master//img/20210716231454.png" srcset="/img/loading.gif" lazyload alt="image-20210716231438163" style="zoom: 50%;" /></li>
-<li><h6 id="重启-IDEA-并验证"><a href="#重启-IDEA-并验证" class="headerlink" title="重启 IDEA 并验证"></a>重启 IDEA 并验证</h6></li>
+<li><p>下载 坚果云 Android 端（略）</p>
+</li>
+<li><p>配置坚果云 Android 端</p>
+<p> <strong>设置 -&gt; 第三方应用管理 -&gt; 添加应用密码</strong>。名称为 “obsidian”， 生成的密码一会儿用到。</p>
+<p> <img src="https://gitee.com/rdleng0/typora-img/raw/master/typora-img/img/image-20210905085759924.png" srcset="/img/loading.gif" lazyload alt="image-20210905085759924"></p>
+</li>
+</ol>
+<p>三、FolderSync</p>
+<ol>
+<li><p>下载</p>
+<p>通过技术手段在 <em>谷歌商店</em> 下载。</p>
+</li>
+<li><p>配置</p>
+<p>添加账户 -&gt; 选择 WebDAV</p>
+<p><img src="https://gitee.com/rdleng0/typora-img/raw/master/typora-img/img/image-20210905090347262.png" srcset="/img/loading.gif" lazyload></p>
+<p>将账户，应用密码，服务器地址依次填入，点击保存。</p>
+<p>新建 FolderPairs ，选择 WebDAV。</p>
+<p><img src="https://gitee.com/rdleng0/typora-img/raw/master/typora-img/img/1630804815(1).png" srcset="/img/loading.gif" lazyload></p>
+<p>设置双向同步，选择远程文件夹为上面坚果云设置的 obsidian 同步文件夹，本地文件夹任意，保存即可。</p>
+<p><img src="https://gitee.com/rdleng0/typora-img/raw/master/typora-img/img/20210905092434.png" srcset="/img/loading.gif" lazyload></p>
+<p>需要同步时点击同步按钮即可。</p>
+<p>参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/402587731">https://zhuanlan.zhihu.com/p/402587731</a></p>
+</li>
 </ol>
 
             </div>
@@ -254,13 +282,6 @@
             <div>
               <div class="post-metas mb-3">
                 
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/%E5%B7%A5%E5%85%B7/">工具</a>
-                    
-                  </div>
                 
               </div>
               
@@ -275,18 +296,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/09/05/Obsidian%20%E9%80%9A%E8%BF%87%E5%9D%9A%E6%9E%9C%E4%BA%91%E5%92%8C%20FolderSync%20%E5%AE%9E%E7%8E%B0%E5%90%8C%E6%AD%A5/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile"></span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/07/03/RSSHub-FreshRSS-FluentReader-%E5%AE%9E%E7%8E%B0-RSS-%E8%AE%A2%E9%98%85/">
-                        <span class="hidden-mobile">RSSHub + FreshRSS + FluentReader 实现 RSS 订阅</span>
+                      <a href="/2021/07/16/IDEA-%E9%85%8D%E7%BD%AE%E7%BB%88%E7%AB%AF%E4%B8%BA-cmder/">
+                        <span class="hidden-mobile">IDEA 配置终端为 cmder</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

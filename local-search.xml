@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title></title>
+    <link href="/2021/09/05/Obsidian%20%E9%80%9A%E8%BF%87%E5%9D%9A%E6%9E%9C%E4%BA%91%E5%92%8C%20FolderSync%20%E5%AE%9E%E7%8E%B0%E5%90%8C%E6%AD%A5/"/>
+    <url>/2021/09/05/Obsidian%20%E9%80%9A%E8%BF%87%E5%9D%9A%E6%9E%9C%E4%BA%91%E5%92%8C%20FolderSync%20%E5%AE%9E%E7%8E%B0%E5%90%8C%E6%AD%A5/</url>
+    
+    <content type="html"><![CDATA[<hr><p>title:Obsidian 通过坚果云和 FolderSync 实现同步<br>tag:工具</p><hr><h1 id="Obsidian-通过坚果云和-FolderSync-实现同步"><a href="#Obsidian-通过坚果云和-FolderSync-实现同步" class="headerlink" title="Obsidian 通过坚果云和 FolderSync 实现同步"></a>Obsidian 通过坚果云和 FolderSync 实现同步</h1><p>Obsidian 自带同步服务每月需要 4 刀，通过坚果云和第三方同步软件 FolderSync 可实现 Windows 和 Android 的双向同步。坚果云免费账号每月上传流量 1GB，下载流量 3GB，用来同步笔记的话暂时够用。</p><p>一、坚果云 Windows 端</p><ol start="0"><li><p>下载坚果云 PC 端（略）</p></li><li><p>注册登录（略） </p></li><li><p>坚果云 PC 端设置同步文件夹</p><p>  在任意盘符下新建一个同步文件夹或将一个文件夹右键通过坚果云同步。这里以 <code>F://obsidian</code> 文件夹为例。</p></li></ol><p>二、坚果云 Android 端</p><ol><li><p>下载 坚果云 Android 端（略）</p></li><li><p>配置坚果云 Android 端</p><p> <strong>设置 -&gt; 第三方应用管理 -&gt; 添加应用密码</strong>。名称为 “obsidian”， 生成的密码一会儿用到。</p><p> <img src="https://gitee.com/rdleng0/typora-img/raw/master/typora-img/img/image-20210905085759924.png" alt="image-20210905085759924"></p></li></ol><p>三、FolderSync</p><ol><li><p>下载</p><p>通过技术手段在 <em>谷歌商店</em> 下载。</p></li><li><p>配置</p><p>添加账户 -&gt; 选择 WebDAV</p><p><img src="https://gitee.com/rdleng0/typora-img/raw/master/typora-img/img/image-20210905090347262.png"></p><p>将账户，应用密码，服务器地址依次填入，点击保存。</p><p>新建 FolderPairs ，选择 WebDAV。</p><p><img src="https://gitee.com/rdleng0/typora-img/raw/master/typora-img/img/1630804815(1).png"></p><p>设置双向同步，选择远程文件夹为上面坚果云设置的 obsidian 同步文件夹，本地文件夹任意，保存即可。</p><p><img src="https://gitee.com/rdleng0/typora-img/raw/master/typora-img/img/20210905092434.png"></p><p>需要同步时点击同步按钮即可。</p><p>参考：<a href="https://zhuanlan.zhihu.com/p/402587731">https://zhuanlan.zhihu.com/p/402587731</a></p></li></ol>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>IDEA 配置终端为 cmder</title>
     <link href="/2021/07/16/IDEA-%E9%85%8D%E7%BD%AE%E7%BB%88%E7%AB%AF%E4%B8%BA-cmder/"/>
     <url>/2021/07/16/IDEA-%E9%85%8D%E7%BD%AE%E7%BB%88%E7%AB%AF%E4%B8%BA-cmder/</url>
