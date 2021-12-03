@@ -1,0 +1,552 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>SpringBoot RESTFul 服务 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"rudongl.github.io","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>rdleng'blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="SpringBoot RESTFul 服务">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-12-03 23:18" pubdate>
+        December 3, 2021 pm
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      14
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">SpringBoot RESTFul 服务</h1>
+            
+            <div class="markdown-body">
+              <h1 id="编译-RestFul-Web-服务"><a href="#编译-RestFul-Web-服务" class="headerlink" title="编译 RestFul Web 服务"></a>编译 RestFul Web 服务</h1><h2 id="你会得到什么效果"><a href="#你会得到什么效果" class="headerlink" title="你会得到什么效果"></a>你会得到什么效果</h2><p>这个教程使你掌握 Spring 创建 “Hello world” RESTFul web 服务。</p>
+<p>你将会编译一个 HTTP GET 请求的 URL ，这个 URL 的链接为 <code>http://localhost:8080/greeting</code>，作为响应它将会返回一个 JSON 表现层：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs json">&#123;<span class="hljs-attr">&quot;id&quot;</span>:<span class="hljs-number">1</span>,<span class="hljs-attr">&quot;content&quot;</span>:<span class="hljs-string">&quot;Hello,World!&quot;</span>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>在查询字符串中也可以使用自定义 <code>name</code> 参数：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html">http://localhost:8080/greeting?name=User<br></code></pre></td></tr></table></figure>
+
+<p><code>name</code> 参数的值覆盖了默认值 <code>World</code>，并且在响应中反应出来：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs json">&#123;<span class="hljs-attr">&quot;id&quot;</span>:<span class="hljs-number">1</span>,<span class="hljs-attr">&quot;content&quot;</span>:<span class="hljs-string">&quot;Hello,User!&quot;</span>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="需要什么"><a href="#需要什么" class="headerlink" title="需要什么"></a>需要什么</h2><ul>
+<li>大约 15 分钟</li>
+<li>喜欢的文本编辑器或 IDE(集成开发环境)</li>
+<li>JDK 1.8 或更高</li>
+<li>Gradle 4+ 或 Maven 3.2+</li>
+<li>也可以直接导入代码到 IDE</li>
+</ul>
+<h2 id="如何完成这个教程"><a href="#如何完成这个教程" class="headerlink" title="如何完成这个教程"></a>如何完成这个教程</h2><p>和很多 Spring 教程一样，你可以从头开始完成每一步或者跳过已经熟悉的步骤。</p>
+<ul>
+<li><p>使用 Git 克隆项目</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> https://github.com/spring-guides/gs-rest-service.git<br></code></pre></td></tr></table></figure></li>
+<li><p>进入 <code>gs-rest-service/initial</code> 目录</p>
+</li>
+</ul>
+<h2 id="使用-Spring-初始化工具"><a href="#使用-Spring-初始化工具" class="headerlink" title="使用 Spring 初始化工具"></a>使用 Spring 初始化工具</h2><ol>
+<li>导航到 <a target="_blank" rel="noopener" href="https://start.spring.io/">Spring Initializr</a>，这个网站帮你拉取你需要的所有依赖。</li>
+<li>选择编译工具：Gradle 或 Maven。</li>
+<li>点击 <strong>依赖</strong> 选择 <strong>Spring Web</strong>。</li>
+<li>点击生成。</li>
+<li>下载压缩文件。</li>
+</ol>
+<h2 id="创建一个资源展示类"><a href="#创建一个资源展示类" class="headerlink" title="创建一个资源展示类"></a>创建一个资源展示类</h2><p>现在你已经搭建了项目以及编译系统，可以创建 web 服务。</p>
+<p>这个服务会处理 <code>/greeting</code> 方式的 <code>GET</code> 请求，<code>name</code> 参数是可选的。<code>GET</code> 请求会返回带有 <code>200 ok</code> 的 JSON 体，类似于这样：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs json">&#123;<br>    <span class="hljs-attr">&quot;id&quot;</span>: <span class="hljs-number">1</span>,<br>    <span class="hljs-attr">&quot;content&quot;</span>: <span class="hljs-string">&quot;Hello, World!&quot;</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><code>id</code> 属性是 greet 的独特的描述符，<code>content</code> 是 greeting 的文本展示部分。</p>
+<p>创建一个带有 <code>id</code> 和 <code>content</code> 属性、构造器、访问器的 POJO。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Greeting</span> </span>&#123;<br><br>	<span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> id;<br>	<span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String content;<br><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Greeting</span><span class="hljs-params">(<span class="hljs-keyword">long</span> id, String content)</span> </span>&#123;<br>		<span class="hljs-keyword">this</span>.id = id;<br>		<span class="hljs-keyword">this</span>.content = content;<br>	&#125;<br><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">long</span> <span class="hljs-title">getId</span><span class="hljs-params">()</span> </span>&#123;<br>		<span class="hljs-keyword">return</span> id;<br>	&#125;<br><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getContent</span><span class="hljs-params">()</span> </span>&#123;<br>		<span class="hljs-keyword">return</span> content;<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<p><em>这个应用使用 Jackson JSON 库自动将 Greeting 对象转化为 JSON 对象。Jackson 被 Web 启动器自动加载。</em></p>
+<hr>
+<h2 id="创建控制层-Controller"><a href="#创建控制层-Controller" class="headerlink" title="创建控制层 Controller"></a>创建控制层 Controller</h2><p>HTTP 请求被 Controller 处理。这些组件被 <code>@RestController</code> 注解修饰，下面的 <code>GreetingController</code> 处理 <code>/greeting</code> 的 <code>GET</code> 请求并返回一个 <code>Greeting</code> 类的实例。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.concurrent.atomic.AtomicLong;<br><br><span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.GetMapping;<br><span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.RequestParam;<br><span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.RestController;<br><br><span class="hljs-meta">@RestController</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GreetingController</span> </span>&#123;<br><br>	<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String template = <span class="hljs-string">&quot;Hello, %s!&quot;</span>;<br>	<span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> AtomicLong counter = <span class="hljs-keyword">new</span> AtomicLong();<br><br>	<span class="hljs-meta">@GetMapping(&quot;/greeting&quot;)</span><br>	<span class="hljs-function"><span class="hljs-keyword">public</span> Greeting <span class="hljs-title">greeting</span><span class="hljs-params">(<span class="hljs-meta">@RequestParam(value = &quot;name&quot;, defaultValue = &quot;World&quot;)</span> String name)</span> </span>&#123;<br>		<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Greeting(counter.incrementAndGet(), String.format(template, name));<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><code>@GetMapping</code> 确保 <code>/greeting</code> 的 <code>HTTP GET</code> 请求匹配到 <code>greeting()</code> 方法。</p>
+<p>其他 HTTP 动词也有相应的注释(例如 <code>POST</code> 的 <code>@PostMapping</code>)。还有一个 <code>@RequestMapping</code> 注释，它们都来自这个注释，可以作为同义词使用(例如<code>@RequestMapping(method=GET)</code>)。</p>
+<p><code>@RequestParam</code> 将 URL 请求参数 <code>name</code> 和方法参数 <code>name</code> 绑定，如果请求参数没有，则使用默认值 <code>World</code> 。</p>
+<p>方法主体的实现根据来自计数器的下一个值创建并返回一个新的 <code>Greeting</code> 对象，该对象具有 <code>id</code> 和<code>content</code> 属性，并使用 <code>Greeting</code> 模板格式化给定的名称。</p>
+<p>传统的 MVC 控制层和 RESTFul 风格不同的一个关键点是 HTTP 响应体创建的方式。不是依赖将响应数据渲染成 HTML 的视图技术，RESTFul web 服务直接返回一个 <code>Greeting</code> 对象。数据直接写到 JSON 对象中。</p>
+<p>上面的代码使用 <code>@RestController</code> 注解，标志着类中每一个对象返回对象而不是视图。它包括 <code>@Controller</code> 和 <code>@ResponseBody</code> 两个注解。</p>
+<p><code>Greeting</code> 对象必须转化为 JSON 格式。多亏 Spring HTTP 消息转换支持，不需要手动转换。因为 <a target="_blank" rel="noopener" href="https://github.com/FasterXML/jackson">jackson2</a> 在路径中，<a target="_blank" rel="noopener" href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/http/converter/json/MappingJackson2HttpMessageConverter.html">MappingJackson2HttpMessageConverter</a> 方法可以自动将 <code>Greeting</code> 实例转化为 JSON 对象。</p>
+<p><code>@SpringBootApplication</code> 注解包括下面全部注解：</p>
+<ul>
+<li><code>@Configuration</code>：应用程序上下文中标记一个类是 bean 定义的源。</li>
+<li><code>@EnableAutoConfiguration</code>: 告诉 SpringBoot 添加基于 classpath 设置的 bean，其他的 beans 和不同的配置设置。例如：如果 <code>spring-webmvc</code> 在路径中，这个注解标志这个项目是 Web 项目则激活关键的习惯，如搭建 <code>DispatcherServelet</code>。</li>
+<li><code>@ComponentScan</code>: 告诉 Spring 寻找其他的组件配置和服务。</li>
+</ul>
+<p><code>main()</code> 方法使用 SpringBoot 的 <code>SpringApplication.run()</code> 方法发布应用。这个 Web 服务是 100% 纯 Java 代码不需要 XML 配置。</p>
+<h2 id="编译可执行-JAR-包"><a href="#编译可执行-JAR-包" class="headerlink" title="编译可执行 JAR 包"></a>编译可执行 JAR 包</h2><p>运行 <code>./mvnw spring-boot:run</code> 或者 <code>./mvnw spring-boot:run</code>，执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">java -jar target/gs-rest-service-0.1.0.jar<br></code></pre></td></tr></table></figure>
+
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>启动项目，访问：<a target="_blank" rel="noopener" href="http://localhost:8080/greeting?name=User">http://localhost:8080/greeting?name=User</a></p>
+<p>会得到：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs json">&#123;<span class="hljs-attr">&quot;id&quot;</span>:<span class="hljs-number">1</span>,<span class="hljs-attr">&quot;content&quot;</span>:<span class="hljs-string">&quot;Hello,World!&quot;</span>&#125;<br></code></pre></td></tr></table></figure>
+
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/RESTFul-SpringBoot/">RESTFul, SpringBoot</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/11/19/SpringBoot%20%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/">
+                        <span class="hidden-mobile">SpringBoot 定时任务</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  
+<script src="/js/clicklove.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/dianjichuzi.js"></script>
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
